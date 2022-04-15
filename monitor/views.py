@@ -1,7 +1,8 @@
 from django.shortcuts import redirect, render
 from .forms import NewUserForm
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm 
 
 # Create your views here.
 def register_request(request):
@@ -37,5 +38,3 @@ def login_request(request):
 	return render(request=request, template_name="main/login.html", context={"login_form":form})
 
 
-def logout_view(request):    
-    return redirect ('accounts:login')
