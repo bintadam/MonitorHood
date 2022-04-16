@@ -5,7 +5,9 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm 
 
 # Create your views here.
-
+def homepage(request):
+	return render(request=request, template_name='main/home.html')
+	
 
 def register_request(request):
 	if request.method == "POST":
