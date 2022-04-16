@@ -6,8 +6,8 @@ from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 def homepage(request):
-	return render(request=request, template_name='main/home.html')
-	
+	return render(request=request, template_name='registration/home.html')
+
 
 def register_request(request):
 	if request.method == "POST":
@@ -39,7 +39,7 @@ def login_request(request):
 		else:
 			messages.error(request,"Invalid username or password.")
 	form = AuthenticationForm()
-	return render(request=request, template_name="main/login.html", context={"login_form":form})
+	return render(request=request, template_name="registration/login.html", context={"login_form":form})
 
 
 def logout_request(request):
