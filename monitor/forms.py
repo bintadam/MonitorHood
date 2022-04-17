@@ -7,5 +7,11 @@ class NeighbourHoodForm(forms.ModelForm):
     class Meta:
         model = Neighbour
         fields = ['user', 'name', 'description', 'location', 'population', 'image']
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['user', 'bio', 'image', 'neighbourhood']				
   
 
