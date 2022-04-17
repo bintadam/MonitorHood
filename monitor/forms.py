@@ -13,5 +13,11 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['user', 'bio', 'image', 'neighbourhood']				
+
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'description', 'neighbourhood', 'image']				
   
 

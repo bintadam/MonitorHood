@@ -67,7 +67,7 @@ def post(request):
     posts = Post.objects.all().order_by('-posted_on')
     return render(request, "post.html", {"posts": posts})		
 
-def new_post(request):
+def newPost(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -78,5 +78,5 @@ def new_post(request):
             return redirect("post")
     else:
         form = PostForm()
-    return render(request, "new_post.html", {"form": form})
+    return render(request, "newPost.html", {"form": form})
 

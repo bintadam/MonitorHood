@@ -39,6 +39,16 @@ class Post(models.Model):
     image = CloudinaryField('image')
 
 
+    def __str__(self) -> str:
+        return self.title
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(max_length=300, blank=True)
