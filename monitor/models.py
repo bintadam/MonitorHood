@@ -31,13 +31,12 @@ class Neighbour(models.Model):
         self.save()
 
 class Post(models.Model):
-    title = models.CharField(max_length=255)
-    neighbourhood= models.ForeignKey(Neighbour, on_delete=models.CASCADE)
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    author = models.TextField()
+    title = models.CharField(max_length=50)
+    description = models.TextField(max_length=500)
+    post_by = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    neighbourhood = models.ForeignKey(Neighbour, on_delete=models.CASCADE)
+    posted_on = models.DateTimeField(auto_now_add=True)
     image = CloudinaryField('image')
-
 
     def __str__(self) -> str:
         return self.title
@@ -58,7 +57,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} profile'
-
 
 class Business(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, blank=True)
