@@ -48,7 +48,7 @@ def createNeighbourHood(request):
         return redirect("home")
     else:
         form = NeighbourHoodForm()
-    return render(request, "create_mtaa.html", {"form": form})
+    return render(request, "create_neighbourhood.html", {"form": form})
 
 
 def post(request):
