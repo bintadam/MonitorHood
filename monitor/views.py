@@ -80,3 +80,17 @@ def newPost(request):
         form = PostForm()
     return render(request, "newPost.html", {"form": form})
 
+
+
+def business(request):
+    user = User.objects.filter(id = request.user.id).first()
+    profile = Profile.objects.filter(user = user).first()
+    if request.method == "POST":
+        business_form = BusinessForm(request.POST, request.FILES)
+        if business_form.is_valid():
+            business = Business(name = request.POST['name'], neighbourhood = profile.neighbourhood)
+            business.save()
+        return redirect('business')
+    else:
+        business_form = BusinessForm()
+    return render(request, "business.html", {"business": business_form})
