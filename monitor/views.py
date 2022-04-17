@@ -41,13 +41,13 @@ def login_request(request):
 
 def createNeighbourHood(request):
     if request.method == "POST":
-        form = NeighbourForm(request.POST, request.FILES)
+        form = NeighbourHoodForm(request.POST, request.FILES)
         if form.is_valid():
             mtaa = form.save(commit = False)
             mtaa.save()
         return redirect("home")
     else:
-        form = NeighbourForm()
+        form = NeighbourHoodForm()
     return render(request, "create_mtaa.html", {"form": form})
 
 
