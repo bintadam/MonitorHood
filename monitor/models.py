@@ -6,6 +6,7 @@ from django.db import models
 class Neighbour(models.Model):
     name = models.CharField(max_length=60, null=True)
     image = CloudinaryField('image')
+    user = models.ForeignKey('Profile', null=True, blank=True, on_delete=models.CASCADE)
     description = models.CharField(max_length=400, null=True)
     location = models.CharField(max_length=200, null=True)
     population = models.IntegerField()

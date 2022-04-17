@@ -38,6 +38,19 @@ def login_request(request):
 	form = AuthenticationForm()
 	return render(request=request, template_name="registration/login.html", context={"login_form":form})
 
+
+def createNeighbourHood(request):
+    if request.method == "POST":
+        form = NeighbourForm(request.POST, request.FILES)
+        if form.is_valid():
+            mtaa = form.save(commit = False)
+            mtaa.save()
+        return redirect("home")
+    else:
+        form = NeighbourForm()
+    return render(request, "create_mtaa.html", {"form": form})
+
+
 def post(request):
     posts = Post.objects.all().order_by('-posted_on')
     return render(request, "post.html", {"posts": posts}
