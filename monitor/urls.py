@@ -1,12 +1,14 @@
 from django.urls import path
-from . import views
+from .import views
 
 app_name = 'monitor'
 
 urlpatterns = [
-    path("", views.homepage, name="homepage"),
-    path("register", views.register_request, name="register"),
-    path("login", views.login_request, name="login"),
-    path("neighbourhood/", views.createNeighbourHood, name = "neighbourhood"),
-    # path("logout", views.logout_request, name= "logout"),
+    path('', views.home, name = 'home_page'),
+    path("add_hood/", views.createNeighbourHood, name = "add_hood"),
+    path("new_post/", views.newPost, name = "new_post"),
+    path("posts/", views.post, name = "post"),
+    path("accounts/profile/", views.profile, name = "profile"),
+    path("business/", views.business, name = "business"),
+    path("logout/", views.logout, name = "logout"),
 ]

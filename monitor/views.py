@@ -9,12 +9,12 @@ from .forms import *
 
 
 @login_required(login_url='accounts/login/')
-def home_page(request):
+def home(request):
     try:
-        mtaa = Neighbour.objects.all()
+        Area = Neighbour.objects.all()
     except Exception as e:
         raise Http404
-    return render(request, "index.html", {"mtaa": mtaa})
+    return render(request, "home.html", {"Area": Area})
 
 
 @login_required(login_url='accounts/login/')
@@ -22,8 +22,8 @@ def createNeighbourHood(request):
     if request.method == "POST":
         form = NeighbourHoodForm(request.POST, request.FILES)
         if form.is_valid():
-            mtaa = form.save(commit = False)
-            mtaa.save()
+            Area = form.save(commit = False)
+            Area.save()
         return redirect("home")
     else:
         form = NeighbourHoodForm()
