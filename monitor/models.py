@@ -37,3 +37,15 @@ class Post(models.Model):
     author = models.TextField()
     image = CloudinaryField('image')
 
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    bio = models.TextField(max_length=300, blank=True)
+    image = CloudinaryField('image')
+    neighbourhood = models.ForeignKey(Neighbour, on_delete=models.SET_NULL, null=True, related_name='users')
+
+
+    def __str__(self):
+        return f'{self.user.username} profile'
+
+

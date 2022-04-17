@@ -53,9 +53,5 @@ def createNeighbourHood(request):
 
 def post(request):
     posts = Post.objects.all().order_by('-posted_on')
-    return render(request, "post.html", {"posts": posts}
+    return render(request, "post.html", {"posts": posts})
 
-def logout_request(request):
-	logout(request)
-	messages.info(request, "You have successfully logged out.") 
-	return redirect("registration:homepage")
