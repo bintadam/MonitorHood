@@ -74,6 +74,6 @@ class Business(models.Model):
         self.save()
 
     def delete_business(self):
-        self.        
+        self.delete        
 
 
