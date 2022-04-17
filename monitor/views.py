@@ -7,7 +7,6 @@ from django.contrib import messages
 def homepage(request):
 	return render(request=request, template_name='registration/home.html')
 
-
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
@@ -39,8 +38,11 @@ def login_request(request):
 	form = AuthenticationForm()
 	return render(request=request, template_name="registration/login.html", context={"login_form":form})
 
+def post(request):
+    posts = Post.objects.all().order_by('-posted_on')
+    return render(request, "post.html", {"posts": posts}
 
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
-	return redirect(":homepage")
+	return redirect("registration:homepage")
