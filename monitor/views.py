@@ -51,6 +51,23 @@ def createNeighbourHood(request):
     return render(request, "create_neighbourhood.html", {"form": form})
 
 
+def profile(request):
+    if request.method == "POST":
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("profile")
+
+    else:
+        form = ProfileForm()
+    return render(request, "profile.html", {"form": form, "profile": profile})
+
+@login_required(login_url='accounts/login/')
+def post(request):
+    posts = Post.objects.all().order_by('-posted_on')
+    return render(request, "post.html", {"posts": posts})		
+
+
 def post(request):
     posts = Post.objects.all().order_by('-posted_on')
     return render(request, "post.html", {"posts": posts})
