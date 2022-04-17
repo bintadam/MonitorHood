@@ -1,5 +1,5 @@
 from django import forms
-from .models import Neighbour, Post
+from .models import Neighbour, Profile
 
 # Create your forms here.
 
