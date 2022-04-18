@@ -26,7 +26,7 @@ def createNeighbourHood(request):
         return redirect("home")
     else:
         form = NeighbourHoodForm()
-    return render(request, "createNeighbourhood.html", {"form": form})
+    return render(request, "CreateNeighbourhood.html", {"form": form})
 
 
 @login_required(login_url='accounts/login/')
