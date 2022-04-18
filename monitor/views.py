@@ -7,13 +7,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth import logout as django_logout
 from .forms import *
 
-
-def home_page(request):
+@login_required(login_url='accounts/login/')
+def home(request):
     try:
-        Area = Neighbour.objects.all()
+        area = Neighbour.objects.all()
     except Exception as e:
         raise Http404
-    return render(request, "home.html", {"Area": Area})
+    return render(request, "home.html", {"area": area})
 
 
 @login_required(login_url='accounts/login/')
@@ -26,7 +26,7 @@ def createNeighbourHood(request):
         return redirect("home")
     else:
         form = NeighbourHoodForm()
-    return render(request, "create_neighbourhood.html", {"form": form})
+    return render(request, "createNeighbourhood.html", {"form": form})
 
 
 @login_required(login_url='accounts/login/')

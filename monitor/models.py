@@ -8,7 +8,6 @@ class Neighbour(models.Model):
     name = models.CharField(max_length=60, null=True)
     image = CloudinaryField('image')
     user = models.ForeignKey('Profile', null=True, blank=True, on_delete=models.CASCADE)
-    description = models.CharField(max_length=400, null=True)
     location = models.CharField(max_length=200, null=True)
     population = models.IntegerField()
 
@@ -32,7 +31,6 @@ class Neighbour(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=50)
-    description = models.TextField(max_length=500)
     post_by = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     neighbourhood = models.ForeignKey(Neighbour, on_delete=models.CASCADE)
     posted_on = models.DateTimeField(auto_now_add=True)
@@ -61,7 +59,6 @@ class Profile(models.Model):
 class Business(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, blank=True)
     name = models.CharField(max_length=60, null=True)
-    description = models.CharField(max_length=400, null=True)
     neighbourhood = models.ForeignKey(Neighbour, on_delete=models.CASCADE)
     email = models.EmailField()
 
