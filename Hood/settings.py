@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'monitor',
     'cloudinary',
+    'django_registration',
 ]
 
 MIDDLEWARE = [

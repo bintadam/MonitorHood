@@ -8,8 +8,7 @@ from django.contrib.auth import logout as django_logout
 from .forms import *
 
 
-@login_required(login_url='accounts/login/')
-def home(request):
+def home_page(request):
     try:
         Area = Neighbour.objects.all()
     except Exception as e:

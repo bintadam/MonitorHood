@@ -1,0 +1,72 @@
+body {
+  background-color: #131413;
+  color:white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+}
+
+#register {
+  margin-top:5%;
+}
+
+
+#login {
+  text-align: center;
+  float:left;
+  margin-top: 30%;
+  background: transparent;
+}
+
+#logo {
+  font-family: 'Pacifico', cursive;
+  font-size:30px;
+}
+
+
+#colored-nav {
+  background-color:rgba(43, 42, 42, 0.507);
+  border-bottom:solid 2px #131413;
+  margin:0;
+  padding-top: 0%;
+  height:70px;
+}
+
+#main {
+  padding-top:3%;
+}
+
+
+a{
+  color:grey;
+}
+
+.nav-link :active {
+  color:white;
+}
+
+a:hover{
+  color:white;
+}
+
+.nav {
+  padding-left:3%;
+  text-align: center;
+  margin-top: 0.5%;
+}
+
+.nav-item {
+  margin-right:13%;
+}
+
+#mynav {
+  border-top: solid 1px grey;
+  border-bottom: solid 1px grey;
+  height:50px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}

@@ -1,10 +1,7 @@
-
-  
 {% if user.is_authenticated %}
 <div class="sidebar" data-color="blue">
   <div class="logo">
-    <a href="/" class="simple-text logo-mini"> ND </a>
-    <a href="/" class="simple-text logo-normal"> NextDoor </a>
+    <a href="/" class="simple-text logo-normal"> MonitorHood </a>
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
@@ -23,7 +20,7 @@
       <li>
         <a href="#">
           <i class="now-ui-icons location_map-big"></i>
-          <p>Health Centers</p>
+          <p>Health Departments</p>
         </a>
       </li>
       <li>
@@ -38,12 +35,7 @@
           <p>User Profile</p>
         </a>
       </li>
-      <li>
-        <a href="#">
-          <i class="now-ui-icons design_bullet-list-67"></i>
-          <p>User List</p>
-        </a>
-      </li>
+      
       <li>
         <a href="{% url 'profile' %}">
           <i class="now-ui-icons text_caps-small"></i>
@@ -93,7 +85,7 @@
             <!-- <button class="btn btn-info" type="submit"><i class="fas fa-search"></i></button> -->
           </form>
           <li>
-            <a class="nav-link" href="{% url 'add_hood' %}"> New Hood </a>
+            <a class="nav-link" href="{% url 'add_hood' %}"> New NeighbourHood </a>
           </li>
           <li>
             <a class="nav-link" href="{% url 'new_post' %}"> New Post </a>

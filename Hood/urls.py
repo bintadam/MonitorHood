@@ -18,6 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include ('monitor.urls')),  
-    
+    path('accounts/', include('registration.backends.simple.urls')),
+    # path('logout/', views.logout, {"next_page": '/'}),
+    path('',include('monitor.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
