@@ -3,8 +3,8 @@ from .import views
 
 urlpatterns = [
     path('', views.home, name = 'home'),
-    path("neighbourhood/", views.createNeighbourHood, name = "neighbourhood"),
-    path("newpost/", views.newPost, name = "newpost"),
+    path("CreateNeighbourhood/", views.createNeighbourHood, name = "CreateNeighbourhood"),
+    path("newPost/", views.new_post, name = "newpost"),
     path("posts/", views.post, name = "post"),
     path("accounts/profile/", views.profile, name = "profile"),
     path("business/", views.business, name = "business"),
