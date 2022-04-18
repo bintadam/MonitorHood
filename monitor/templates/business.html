@@ -15,8 +15,8 @@
                 </div>
 
                 <div class="mt-5">
-                  <button type="submit" class="btn btn-warning btn-icon-text">
-                    Add a Business
+                  <button type="submit" class="btn btn-primary btn-icon-text">
+                    Add Business
                   </button>
                 </div>
               </div>
@@ -34,7 +34,7 @@
       {% for business in business %}
       <div class="card">
         <div class="card-header">
-          <h5 class="card-category">All Businesse</h5>
+          <h5 class="card-category">Business</h5>
           <h4 class="card-title">{{ business.neighbourhood }}</h4>
         </div>
         <div class="card-body">
@@ -43,15 +43,13 @@
               <thead class="text-primary">
                 <th>Name</th>
                 <th>Email</th>
-                <th>Description</th>
-                <th class="text-right">Salary</th>
+                
               </thead>
               <tbody>
                 <tr>
                   <td>{{ business.name }}</td>
                   <td>{{ business.email }}</td>
-                  <td>{{ business.description }}</td>
-                  <td class="text-right">$36,738</td>
+                
                 </tr>
               </tbody>
             </table>
