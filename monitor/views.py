@@ -76,3 +76,9 @@ def business(request):
     else:
         business_form = BusinessForm()
     return render(request, "business.html", {"business": business_form})
+
+
+@login_required
+def logout(request):
+    django_logout(request)
+    return  HttpResponseRedirect('/')
